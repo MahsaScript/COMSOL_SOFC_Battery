@@ -1,0 +1,48 @@
+p_atm 1[atm] Atmospheric pressure
+T 800[degC] Temperature
+mu 3e-5[Pa*s] Viscosity, air
+dp_a 2[Pa] Pressure drop, anode
+dp_c 6[Pa] Pressure drop, cathode
+i0_a 0.1[A/m^2] Exchange current density, anode
+i0_c 0.01[A/m^2] Exchange current density, cathode
+Sa_a 1e9[1/m] Specific surface area, anode
+Sa_c 1e9[1/m] Specific surface area, cathode
+V_pol 0.05[V] Initial cell polarization
+perm_a 1e-10[m^2] Anode permeability
+perm_c 1e-10[m^2] Cathode permeability
+Eeq_a 0[V] Equilibrium voltage, anode
+Eeq_c 1[V] Equilibrium voltage, cathode
+V_cell Eeq_c-Eeq_a-V_pol Cell voltage
+kleff_a 1[S/m] Electrolyte effective conductivity, anode
+kseff_a 1000[S/m] Solid effective conductivity, anode
+kleff_c 1[S/m] Electrolyte effective conductivity, cathode
+kseff_c 1000[S/m] Solid effective conductivity, cathode
+kl 5[S/m] Electrolyte conductivity
+ks 5000[S/m] Current collector conductivity
+vh2 6e-6 Kinetic volume, H2
+vo2 16.6e-6 Kinetic volume, O2
+vn2 17.9e-6 Kinetic volume, N2
+vh2o 12.7e-6 Kinetic volume, H2O
+Mh2 2[g/mol] Molar mass, H2
+Mo2 32[g/mol] Molar mass, O2
+Mn2 28[g/mol] Molar mass, N2
+Mh2o 18[g/mol] Molar mass, H2O
+kd 3.16e-8[m^2/s] Reference diffusivity
+e_por 0.4 Porosity
+Dh2h2o kd*(T[1/K])^1.75/(p_atm[1/Pa]*(vh2^(1/3)+vh2o^(1/3))^2)*(1[kg/mol]/Mh2+1[kg/mol]/Mh2o)^0.5 Diffusivity, H2-H2O
+Do2h2o kd*(T[1/K])^1.75/(p_atm[1/Pa]*(vo2^(1/3)+vh2o^(1/3))^2)*(1[kg/mol]/Mo2+1[kg/mol]/Mh2o)^0.5 Diffusivity, O2-H2O
+Do2n2 kd*(T[1/K])^1.75/(p_atm[1/Pa]*(vo2^(1/3)+vn2^(1/3))^2)*(1[kg/mol]/Mo2+1[kg/mol]/Mn2)^0.5 Diffusivity, O2-N2
+Dn2h2o kd*(T[1/K])^1.75/(p_atm[1/Pa]*(vh2o^(1/3)+vn2^(1/3))^2)*(1[kg/mol]/Mh2o+1[kg/mol]/Mn2)^0.5 Diffusivity, N2-H2O
+w_h2ref 0.4 Inlet weight fraction, H2 at anode
+w_o2ref 0.15 Inlet weight fraction, O2 at cathode
+w_h2oref 0.37 Inlet weight fraction, H2O at cathode
+c_tot p_atm/(R_const*T) Total molar concentration
+c_o2ref c_tot*(w_o2ref/Mo2)/(w_o2ref/Mo2+w_h2oref/Mh2o+(1-w_o2ref-w_h2oref)/Mn2) Reference concentration, O2 at cathode
+c_h2ref c_tot*(w_h2ref/Mh2)/(w_h2ref/Mh2+(1-w_h2ref)/Mh2o) Reference concentration, H2 at anode
+c_h2oref c_tot*((1-w_h2ref)/Mh2o)/(w_h2ref/Mh2+(1-w_h2ref)/Mh2o) Reference concentration, H2O at anode
+W_channel 0.5e-3[m] Gas flow channel width
+W_rib 0.5e-3[m] Rib width
+H_gde 1e-4[m] Gas diffusion electrode thickness
+H_electrolyte 1e-4[m] Electrolyte thickness
+H_channel 0.5e-3[m] Gas flow channel height
+L 10e-3[m] Flow channel length
